@@ -68,7 +68,7 @@ model.init = function (m) {
     defaultVersion: defaultVersion,
     schemas: model.store[m],
     validate: function validate(data, version) {
-      var partial = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
+      var partial = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
 
       var v = version || this.defaultVersion;
       // Return validation
